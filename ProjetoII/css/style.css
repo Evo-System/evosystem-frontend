@@ -1,0 +1,395 @@
+/* --- Importação da Fonte Moderna --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Variáveis de Cor (Sem alteração) --- */
+:root {
+    --cor-fundo: #10121a;
+    --cor-sidebar: #1a1c2a;
+    --cor-card: #25283d;
+    --cor-texto: #e0e0e0;
+    --cor-texto-mutado: #8c8f9e;
+    --cor-primaria: #007bff;
+    --cor-acento: #4a00e0;
+    --cor-gradiente: linear-gradient(90deg, var(--cor-primaria), #3d52fc, var(--cor-acento));
+    --cor-verde: #00ff88;
+    --cor-verde-escuro: #00b361;
+}
+
+/* --- Reset Básico + Transição Global --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    /* ATUALIZADO: Transição suave para todos os elementos */
+    transition: all 0.25s ease-in-out;
+}
+
+body {
+    /* ATUALIZADO: Fonte Poppins */
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: linear-gradient(135deg, #2a0a44, #10121a 50%, #1a1f44);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* --- Scrollbar Customizada (NOVO) --- */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--cor-fundo);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--cor-card);
+    border-radius: 4px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cor-primaria);
+}
+
+
+/* --- Layout Principal da Aplicação --- */
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 700px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Barra Lateral (Sidebar) com Efeito Vidro --- */
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    width: 240px;
+    background-color: rgba(26, 28, 42, 0.7);
+    backdrop-filter: blur(15px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo { text-align: center; margin-bottom: 40px; }
+.logo img { max-width: 90%; }
+
+.sidebar nav ul { list-style: none; }
+.sidebar nav li { margin-bottom: 10px; }
+
+.sidebar nav a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--cor-texto-mutado);
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.sidebar nav a:hover {
+    /* ATUALIZADO: Efeito hover mais sutil e claro */
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--cor-texto);
+}
+
+.sidebar nav a.active {
+    background: var(--cor-gradiente);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* --- Conteúdo Principal --- */
+.main-content {
+    background-color: var(--cor-fundo);
+    padding: 30px 40px 30px 280px;
+    width: 100%;
+    min-height: 700px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.app-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* === Botões Modernizados === */
+.btn {
+    padding: 10px 20px;
+    border: 1px solid transparent; /* ATUALIZADO: Borda p/ evitar "pulo" */
+    border-radius: 8px;
+    font-size: 0.95rem; /* ATUALIZADO: Ajuste fino */
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* ATUALIZADO: Herda a fonte */
+}
+
+/* ATUALIZADO: Botão Primário (com animação de gradiente) */
+.btn-primary {
+    background: var(--cor-gradiente);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    background-size: 200% auto; /* NOVO */
+    transition: all 0.4s ease; /* NOVO */
+}
+.btn-primary:hover {
+    background-position: right center; /* NOVO */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* ATUALIZADO: Botão Secundário (estilo "outline") */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--cor-texto-mutado);
+    border: 1px solid var(--cor-card);
+}
+.btn-secondary:hover {
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+    border-color: var(--cor-card);
+}
+
+/* ATUALIZADO: Botão Verde (com "glow") */
+.btn-verde {
+    background-color: var(--cor-verde-escuro);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+.btn-verde:hover {
+    background-color: var(--cor-verde);
+    color: var(--cor-fundo);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+}
+
+
+/* === Estilos PÁGINA 1: VERIFICAR === */
+.scan-section {
+    text-align: center;
+    padding: 40px 0;
+    background-color: var(--cor-sidebar);
+    border-radius: 12px;
+}
+.scan-button-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px auto;
+}
+.scan-button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: none;
+    background: var(--cor-gradiente);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
+    
+    /* ATUALIZADO: Animação de gradiente no hover */
+    background-size: 200% auto;
+    transition: all 0.4s ease;
+}
+.scan-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(74, 0, 224, 0.7);
+    background-position: right center; /* NOVO */
+}
+.scan-status { font-size: 1.1rem; color: var(--cor-texto-mutado); }
+.scan-status strong { color: var(--cor-verde); }
+
+
+/* ATUALIZADO: Cards Interativos */
+.card {
+    background-color: var(--cor-card);
+    padding: 25px;
+    border-radius: 12px;
+    /* border-left: 5px solid var(--cor-primaria); REMOVIDO */
+    border: 1px solid var(--cor-card); /* NOVO */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* NOVO */
+}
+.card:hover {
+    transform: translateY(-5px); /* NOVO */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* NOVO */
+    border-color: rgba(0, 123, 255, 0.5); /* NOVO */
+}
+.card h3 { margin-top: 0; margin-bottom: 15px; color: white; }
+.card p { color: var(--cor-texto-mutado); line-height: 1.6; }
+.card .card-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* === Estilos PÁGINA 2: ATUALIZAR === */
+.update-summary {
+    background-color: var(--cor-card);
+    padding: 20px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.update-summary p { font-size: 1.2rem; }
+.update-summary strong { color: var(--cor-primaria); font-size: 1.5rem; }
+
+.driver-list { list-style: none; }
+.driver-item {
+    background-color: var(--cor-card); /* ATUALIZADO */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.driver-item:hover {
+    background-color: #3a3e5e; /* ATUALIZADO */
+}
+.driver-item-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    /* ATUALIZADO: Ícone placeholder mais bonito */
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-primaria);
+}
+/* Você pode adicionar um ícone aqui via JS ou HTML */
+.driver-item-info { flex: 1; }
+.driver-item-info h3 { color: white; margin-bottom: 5px; }
+.driver-item-info p { color: var(--cor-texto-mutado); font-size: 0.9rem; }
+.driver-item-info p strong { color: var(--cor-verde); }
+
+/* === Estilos PÁGINA 3: DESEMPENHO === */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cor-card);
+}
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+}
+/* ATUALIZADO: Card de Ferramenta interativo */
+.tool-card {
+    background-color: var(--cor-card);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--cor-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 123, 255, 0.5);
+}
+.tool-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.tool-card-header h3 { color: white; margin: 0; }
+.tool-card p { color: var(--cor-texto-mutado); line-height: 1.6; margin-bottom: 20px; }
+.tool-card-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--cor-verde);
+}
+.tool-card-status::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--cor-verde);
+}
+
+/* === Estilos PÁGINA 4: OPÇÕES === */
+.settings-group {
+    background-color: var(--cor-sidebar);
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+.settings-group h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--cor-card);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    color: var(--cor-texto-mutado);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+/* ATUALIZADO: Estilo de Inputs e Selects */
+.form-group select,
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-card);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+/* NOVO: Efeito de Foco */
+.form-group select:focus,
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.form-group-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.form-group-checkbox input { width: 1.2em; height: 1.2em; }
+.form-group-checkbox label { margin: 0; color: var(--cor-texto); }
