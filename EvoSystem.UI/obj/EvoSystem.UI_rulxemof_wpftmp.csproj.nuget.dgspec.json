@@ -1,0 +1,117 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\EvoSystem.UI\\EvoSystem.UI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\evosystem-backend\\evosystem-backend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\evosystem-backend\\evosystem-backend.csproj",
+        "projectName": "evosystem-backend",
+        "projectPath": "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\evosystem-backend\\evosystem-backend.csproj",
+        "packagesPath": "C:\\Users\\lfsan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\evosystem-backend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lfsan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\EvoSystem.UI\\EvoSystem.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\EvoSystem.UI\\EvoSystem.UI.csproj",
+        "projectName": "EvoSystem.UI",
+        "projectPath": "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\EvoSystem.UI\\EvoSystem.UI.csproj",
+        "packagesPath": "C:\\Users\\lfsan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\EvoSystem.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lfsan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {
+              "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\evosystem-backend\\evosystem-backend.csproj": {
+                "projectPath": "C:\\Users\\lfsan\\OneDrive\\Documentos\\evosystem-backend\\evosystem-backend\\evosystem-backend.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

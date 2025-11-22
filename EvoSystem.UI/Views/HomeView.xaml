@@ -1,0 +1,111 @@
+<UserControl x:Class="EvoSystem.UI.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,10,0">
+        <StackPanel>
+            
+            <Border Background="#1a1c2a" CornerRadius="15" Padding="40" Margin="0,0,20,30" BorderThickness="1" BorderBrush="#33ffffff">
+                <StackPanel HorizontalAlignment="Center">
+                    
+                    <Grid Width="200" Height="200">
+                        <Border Background="#10000000" CornerRadius="100" Margin="5">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#007bff" BlurRadius="30" ShadowDepth="0" Opacity="0.4"/>
+                            </Border.Effect>
+                        </Border>
+
+                        <Button x:Name="BtnScan" Width="180" Height="180" Click="BtnScan_Click" Cursor="Hand">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="bdr" CornerRadius="90" Background="{StaticResource GradienteBotao}" BorderThickness="4" BorderBrush="#33ffffff">
+                                        <Grid>
+                                            <StackPanel x:Name="StkNormal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <TextBlock x:Name="TxtBtnVerify" Text="VERIFICAR" FontSize="22" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                                                <TextBlock x:Name="TxtBtnSub" Text="Iniciar Escaneamento" FontSize="12" Foreground="#bbffffff" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                            </StackPanel>
+                                            
+                                            <StackPanel x:Name="StkLoading" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+                                                <TextBlock Text="0%" x:Name="TxtPorcentagem" FontSize="32" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                                                <TextBlock x:Name="TxtAnalyzing" Text="Analisando..." FontSize="14" Foreground="#e0e0e0" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="bdr" Property="Background" Value="#3d52fc"/>
+                                            <Setter TargetName="bdr" Property="Effect">
+                                                <Setter.Value>
+                                                    <DropShadowEffect Color="#3d52fc" BlurRadius="20" ShadowDepth="0"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter TargetName="bdr" Property="Background" Value="#25283d"/>
+                                            <Setter TargetName="bdr" Property="BorderBrush" Value="#555"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+
+                    <ProgressBar x:Name="ProgressoScan" Width="300" Height="6" Margin="0,25,0,10" 
+                                 Background="#25283d" Foreground="#00ff88" BorderThickness="0"
+                                 Visibility="Collapsed"/>
+
+                    <TextBlock x:Name="TxtStatusScan" Text="O sistema está aguardando verificação."
+                               Foreground="#8c8f9e" Margin="0,10,0,0" 
+                               HorizontalAlignment="Center" FontSize="14"/>
+                </StackPanel>
+            </Border>
+
+            <WrapPanel>
+                
+                <Border Style="{StaticResource CardStyle}" Width="350" Height="220">
+                    <StackPanel>
+                        <TextBlock x:Name="TitleInfoSys" Text="Informações do Sistema" 
+                                   FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,15"/>
+                        
+                        <Grid Margin="0,5">
+                            <TextBlock Text="CPU:" Foreground="#8c8f9e"/>
+                            <TextBlock x:Name="TxtCpu" Text="..." Foreground="White" HorizontalAlignment="Right" FontWeight="SemiBold"/>
+                        </Grid>
+                        <Separator Background="#22ffffff" Margin="0,5"/>
+
+                        <Grid Margin="0,5">
+                            <TextBlock Text="GPU:" Foreground="#8c8f9e"/>
+                            <TextBlock x:Name="TxtGpu" Text="..." Foreground="White" HorizontalAlignment="Right" FontWeight="SemiBold"/>
+                        </Grid>
+                        <Separator Background="#22ffffff" Margin="0,5"/>
+
+                        <Grid Margin="0,5">
+                            <TextBlock Text="RAM:" Foreground="#8c8f9e"/>
+                            <TextBlock x:Name="TxtRam" Text="..." Foreground="White" HorizontalAlignment="Right" FontWeight="SemiBold"/>
+                        </Grid>
+                        <Separator Background="#22ffffff" Margin="0,5"/>
+
+                        <Grid Margin="0,5">
+                            <TextBlock x:Name="LblSystem" Text="Sistema:" Foreground="#8c8f9e"/>
+                            <TextBlock x:Name="TxtOs" Text="..." Foreground="White" HorizontalAlignment="Right" FontWeight="SemiBold"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{StaticResource CardStyle}" Width="250" Height="220">
+                    <StackPanel>
+                        <TextBlock x:Name="TitleLastScan" Text="Última Verificação" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                        
+                        <TextBlock x:Name="TxtLastScanTime" Text="--" FontSize="32" FontWeight="Bold" Foreground="#8c8f9e" HorizontalAlignment="Center"/>
+                        
+                        <TextBlock x:Name="TxtLastScanStatus" Text="Nunca verificado" 
+                                   Foreground="#8c8f9e" Margin="0,10,0,0" TextWrapping="Wrap" TextAlignment="Center"/>
+                        
+                        <TextBlock x:Name="IconStatus" Text="🛡️" FontSize="24" HorizontalAlignment="Center" Margin="0,15,0,0" Opacity="0.5"/>
+                    </StackPanel>
+                </Border>
+
+            </WrapPanel>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
